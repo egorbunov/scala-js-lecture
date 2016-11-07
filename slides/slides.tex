@@ -1,0 +1,88 @@
+%!TEX program = xelatex
+\input{./env.tex}
+\makeatletter
+\def\input@path{{./fig/}}
+\makeatother
+\graphicspath{{./fig/}}
+
+\title{Scala.js}
+\author[Егор Горбунов]{
+	Студент: Егор Горбунов
+}
+\institute{CПбАУ}
+% \date{20 мая 2016 г.}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{JavaScript}
+
+\begin{itemize}
+	\item Исторически сложившийся стандарт для оживления ваших веб-страниц
+	\item Браузер предоставляет \emph{объектную модель документа} (DOM), которую можно изменять (из JavaScript)
+	\item AJAX (Asynchronous Javascript and XML)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Проблемы JavaScript}
+\begin{itemize}
+	\item \sout{Я не знаю JavaScript}
+	\item Динамический
+	\item Нетипизированный
+	\item Непредсказуемый
+\begin{lstlisting}[escapeinside={(*}{*)}]
+['10','10','10','10','10'].map(parseInt) (*$\Longrightarrow$*) [10, NaN, 2, 3, 4]
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Что такое Scala.js?}
+\begin{itemize}
+	\item Компилятор из \alert{Scala} в \alert{JavaScript}
+	\item Получаем альтернативу JavaScript для \emph{frontend} разработки
+		\begin{itemize}
+			\item[-] Статическая типизация $\rightarrow$ безопаснее
+			\item[-] Один язык для серверной и клиентский частей
+		\end{itemize}
+	\item Совместим с JavaScript (т.е. можно вызывать из JavaScript из Scala.js и наоборот)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Процесс компиляции в Scala.js}
+	\begin{itemize}
+		\item[] \alert{\texttt{sbt> compile}}
+		\begin{center}
+		\begin{small}
+			\texttt{*.scala}\\ 
+			$\Downarrow$ \\ 
+			\texttt{*.sjsir} $+$ \texttt{*.class}
+		\end{small}
+		\end{center}
+		\item[] \alert{\texttt{sbt> fastOptJS}}
+		\begin{center}
+		\begin{small}
+			\texttt{\{*.sjsir\} + \{*.class\}}  \\ 
+            $\Downarrow$ \\
+            граф достижимости символов \\
+            $\Downarrow$ \\
+            \texttt{fastOpt.js}
+        \end{small}
+		\end{center}
+		\item[] \alert{\texttt{sbt> fullOptJS}}
+		\begin{center}
+		\begin{small}
+			\texttt{fastOpt.js} $\Rightarrow$ \texttt{\href{https://github.com/google/closure-compiler}{Google Closure Compiler}} $\Rightarrow$ \texttt{fastOpt.js}
+        \end{small}
+		\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Слайды и примеры}
+\begin{center}
+\end{center}
+\end{frame}
+
+
+\end{document}
