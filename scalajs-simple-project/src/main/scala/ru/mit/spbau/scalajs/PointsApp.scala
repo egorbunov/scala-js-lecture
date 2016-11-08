@@ -1,9 +1,9 @@
 package ru.mit.spbau.scalajs
 
-import scala.scalajs.js.JSApp
 import org.scalajs.dom
 import org.scalajs.dom.html
-import dom.document
+
+import scala.scalajs.js.JSApp
 
 object PointsApp extends JSApp {
     override def main(): Unit = {
