@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <title>SPbAU Scala.js Tutorial</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Plot</h1>
+    <img id="pin" width="20" height="20" src="http://www.myiconfinder.com/uploads/iconsets/256-256-89fdce5084dbe77556cf99f7b22ae7e8-pin.png" alt="pin">
+    <canvas id="points-canvas"></canvas>
+</div>
+
+<script type="text/javascript" src="./target/scala-2.11/scalajs-simple-project-fastopt.js"></script>
+<script type="text/javascript">
+ru.mit.spbau.scalajs.PointsApp().main();
+</script>
+</body>
+</html>
