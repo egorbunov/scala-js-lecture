@@ -89,6 +89,7 @@
 	\item Используем \alert{Intellij Idea} $+$ \alert{Scala Plugin} $+$ \alert{SBT Plugin}
 	\item Scala $2.11.8$
 	\item Scala.js $0.6.13$
+	\item scalajs-dom $0.9.1$
 \end{itemize}
 \begin{itemize}
 	\item \alert{\texttt{sbt> run}} --- исполнить код Java Script интерпретатором
@@ -98,10 +99,31 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Пример 2. + Workbench + Scalatags}
+\begin{frame}{Пример 2. + Scalatags + Upickle + Spray (+Akka)}
+\begin{itemize}
+	\item com.lihaoyi.scalatags $0.6.1$
+	\item com.lihaoyi.upickle $0.4.3$
+	\item \href{http://spray.io/}{Spray} $1.3.2$
+\end{itemize}
+\begin{itemize}
+	\item SBT Cross Project workflow
+	\item Client-Server shared code
+	\item \texttt{sbt> compile} $\Rightarrow$ \texttt{sbt> appJVM/run}
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Пример 3. + Autowire + Akka}
+\begin{frame}{Пример 2. Добавляем Autowire}
+\begin{itemize}
+	\item \alert{Клиент}: более или менее надёжный код (Scala)
+	\item \alert{Сервер}: аналогично
+	\item \alert{А между ними?} AJAX запросы по протоколу, проверка соблюдения которого происходит только во время исполнения
+\end{itemize}
+\begin{center}
+$\Downarrow$
+\end{center}
+\begin{itemize}
+	\item \texttt{com.lihaoyi.autowire} $0.2.6$
+\end{itemize}
 \end{frame}
 
 \end{document}
