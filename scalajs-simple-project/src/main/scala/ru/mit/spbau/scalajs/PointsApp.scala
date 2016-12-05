@@ -17,7 +17,7 @@ object PointsApp extends JSApp {
         canvas.width = canvas.parentElement.clientWidth
         canvas.height = canvas.parentElement.clientHeight
 
-        renderer.fillStyle = "#f7f7f7"
+        renderer.fillStyle = "#000000"
         renderer.fillRect(0, 0, canvas.width, canvas.height)
 
         renderer.fillStyle = "red"
